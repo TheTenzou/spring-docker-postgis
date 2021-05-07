@@ -4,3 +4,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+  data:
+    rest:
+      base-path: api/test/v1
