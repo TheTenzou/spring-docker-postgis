@@ -6,7 +6,7 @@ import javax.persistence.*
 @Table(name = "restaurant")
 data class Restaurant(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
     @Column(name = "restaurant_name")
     var name: String,
@@ -17,5 +17,5 @@ data class Restaurant(
     @Column(name = "restaurant_lon")
     var lon: Double,
     @OneToMany(mappedBy = "restaurant")
-    var menus: List<Menu>
+    var menus: List<Menu>?
 )

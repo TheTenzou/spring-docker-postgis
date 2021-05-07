@@ -7,7 +7,7 @@ import javax.persistence.*
 @Table(name = "menu")
 data class Menu(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
     @ManyToOne
     @JoinColumn(name = "restaurant_id")
