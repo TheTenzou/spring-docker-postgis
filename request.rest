@@ -1,0 +1,66 @@
+###
+GET http://localhost:8080/api/test/v1/restaurants
+
+###
+GET http://localhost:8080/api/test/v1/menus
+
+###
+POST http://localhost:8080/api/test/v1/restaurants
+Content-Type: application/json
+
+{
+  "name": "test restaurant",
+  "location": "test loc",
+  "lat": 324.4,
+  "lon": 214.3
+}
+
+###
+PUT http://localhost:8080/api/test/v1/restaurants/4
+Content-Type: application/json
+
+{
+  "name": "test restaurant",
+  "location": "put test",
+  "lat": 324.4
+}
+
+###
+PATCH http://localhost:8080/api/test/v1/restaurants/4
+Content-Type: application/json
+
+{
+  "lon": 12.3
+}
+
+###
+DELETE http://localhost:8080/api/test/v1/restaurants/2
+
+###
+POST http://localhost:8080/api/test/v1/menus
+Content-Type: application/json
+
+{
+  "date": "2017-01-01",
+  "title": "menu",
+  "text": "this is text",
+  "restaurant": "http://localhost:8080/api/test/v1/restaurants/2"
+}
+
+###
+POST http://localhost:8080/api/test/v1/restaurants
+Content-Type: application/json
+
+{
+  "name": "test restaurant 2",
+  "location": "test loc 2",
+  "lat": 324.4,
+  "lon": 214.3,
+  "menus": [
+    {
+      "date": "2017-01-01",
+      "title": "menu rest 2",
+      "text": "this is text"
+    }
+  ]
+}
