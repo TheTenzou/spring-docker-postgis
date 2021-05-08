@@ -1,5 +1,6 @@
 package ru.tenzou.kotlindatarest.model
 
+import org.springframework.data.rest.core.annotation.RestResource
 import javax.persistence.*
 
 @Entity
@@ -16,6 +17,7 @@ data class Restaurant(
     var lat: Double,
     @Column(name = "restaurant_lon")
     var lon: Double,
-    @OneToMany(mappedBy = "restaurant")
-    var menus: List<Menu>?
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    @RestResource(exported = false)
+    var menus: List<Menu>
 )

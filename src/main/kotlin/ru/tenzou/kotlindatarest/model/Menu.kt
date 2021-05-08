@@ -9,11 +9,11 @@ data class Menu(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "restaurant_id")
-    var restaurant: Restaurant,
+    var restaurant: Restaurant?,
     @Column(name = "menu_date", columnDefinition = "DATE")
-    var data: LocalDate,
+    var date: LocalDate,
     @Column(name = "menu_title")
     var title: String,
     @Column(name = "menu_text")
