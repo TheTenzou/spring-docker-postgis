@@ -12,6 +12,8 @@ data class Restaurant(
     var id: Long,
     @Column(name = "restaurant_name")
     var name: String,
+    @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    var type: RestaurantType,
     @Column(name = "restaurant_location")
     var location: String,
     @Column(name = "restaurant_position")
