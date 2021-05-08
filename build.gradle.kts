@@ -12,6 +12,10 @@ group = "ru.tenzou"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
+tasks.bootJar {
+	archiveFileName.set("spring-postgis.jar")
+}
+
 repositories {
 	mavenCentral()
 }
@@ -28,7 +32,6 @@ dependencies {
 	runtimeOnly("org.hibernate:hibernate-core:5.4.31.Final")
 	runtimeOnly("org.hibernate:hibernate-spatial:5.4.31.Final")
 	runtimeOnly("org.postgresql:postgresql")
-	runtimeOnly("org.postgis:postgis-jdbc")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
