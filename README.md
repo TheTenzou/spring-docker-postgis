@@ -1,2 +1,2 @@
 # spring-rest-and-postgis
-Простое spring jpa rest приложение с использование postgis и геоданных
+Простое spring приложение с использованием docker'а, postgis, spring jpa rest
