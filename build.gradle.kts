@@ -23,6 +23,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.n52.jackson:jackson-datatype-jts:1.2.6")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.hibernate:hibernate-core:5.4.31.Final")
 	runtimeOnly("org.hibernate:hibernate-spatial:5.4.31.Final")

@@ -1,5 +1,6 @@
 package ru.tenzou.kotlindatarest.model
 
+import org.locationtech.jts.geom.Point
 import org.springframework.data.rest.core.annotation.RestResource
 import javax.persistence.*
 
@@ -13,11 +14,8 @@ data class Restaurant(
     var name: String,
     @Column(name = "restaurant_location")
     var location: String,
-    @Column(name = "restaurant_lat")
-    var lat: Double,
-    @Column(name = "restaurant_lon")
-    var lon: Double,
+    @Column(name = "restaurant_position")
+    var position: Point,
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-    @RestResource(exported = false)
-    var menus: List<Menu>
+    var menus: List<Menu>?
 )

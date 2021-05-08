@@ -11,8 +11,13 @@ Content-Type: application/json
 {
   "name": "test restaurant",
   "location": "test loc",
-  "lat": 324.4,
-  "lon": 214.3
+  "position": {
+    "type": "Point",
+    "coordinates": [ 1.0, 1.0]
+  },
+  "menus": [
+    "http://localhost:8080/api/test/v1/menus/1"
+  ]
 }
 
 ###
